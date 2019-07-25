@@ -29,7 +29,7 @@ public class GetVoicePlayWindows : MonoBehaviour
 
     public void InstantiateBrowserWindow()
     {
-        if(browserWindow != null)
+        if(browserWindow == null)
         {
             browserWindow = Instantiate(browserWindowPrefab, virtualHMD.transform.position, Quaternion.Euler(browserRotation));
             browserComponent = browserWindow.GetComponentInChildren<Browser>();
