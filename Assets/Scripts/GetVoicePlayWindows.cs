@@ -10,8 +10,6 @@ public class GetVoicePlayWindows : MonoBehaviour
 
     public GameObject browserWindowPrefab;
 
-    public string URL;
-
     private GameObject browserWindow;
     private Browser browserComponent;
     private Animator browserVisualingAnimator;
@@ -27,13 +25,17 @@ public class GetVoicePlayWindows : MonoBehaviour
         browserVisualingAnimator = null;
     }
 
-    public void InstantiateBrowserWindow()
+    public void InstantiateBrowserWindow(string URL = "http://www.google.com/")
     {
-        if(browserWindow != null)
+        if(browserWindow == null)
         {
             browserWindow = Instantiate(browserWindowPrefab, virtualHMD.transform.position, Quaternion.Euler(browserRotation));
             browserComponent = browserWindow.GetComponentInChildren<Browser>();
             browserComponent.Url = URL;
+        }
+        else
+        {
+            browserComponent.LoadURL(URL, force: true);
         }
     }
 
@@ -51,7 +53,6 @@ public class GetVoicePlayWindows : MonoBehaviour
         yield return new WaitForSeconds(1f);
         Destroy(browserWindow);
         browserWindow = null;
-        URL = null;
     }
 
     void Update()
