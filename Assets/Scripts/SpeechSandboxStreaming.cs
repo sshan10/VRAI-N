@@ -35,6 +35,7 @@ public class SpeechSandboxStreaming : MonoBehaviour
 
     public GameManager gameManager;
     public GetVoicePlayWindows browser;
+    public DunDunPlay dunDunSpawner;
 
 
 
@@ -429,6 +430,7 @@ public class SpeechSandboxStreaming : MonoBehaviour
                 {
                     isWakeUp = true;
                     gameManager.PlayClip(respondClip);
+                    dunDunSpawner.Instantiate();
 
                     return;
                     //ReserveToSleep();
