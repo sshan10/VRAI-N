@@ -5,16 +5,50 @@ using UnityEngine;
 public class DunDunPlay : MonoBehaviour
 {
     public GameObject player;
+    public GameObject DunDunPrefab;
+    public GameObject Instance = null;
+    public Transform playerTransform;
 
-    // Start is called before the first frame update
-    void Start()
+    private Animator DunDunAnimatorController;
+
+    void Awake()
     {
-        
+        playerTransform = Camera.main.transform;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Instantiate()
     {
-        
+        Vector3 spawnPosition = GetNextPosition();
+
+        if (Instance == null)
+        {
+            Instance = Instantiate(DunDunPrefab);
+        }
+
+        Instance.transform.position = spawnPosition;
+        Instance.transform.LookAt(playerTransform);
+
+        DunDunAnimatorController = Instance.GetComponent<Animator>();
+    }
+
+    private Vector3 GetNextPosition()
+    {
+        Vector3 offset = playerTransform.forward.normalized * 3;
+        Vector3 offsetPosition = playerTransform.position + offset;
+
+        return offsetPosition;
+    }
+
+    public void transPosition()
+    {
+        Vector3 nextPosition = GetNextPosition();
+
+        Instance.transform.position = nextPosition;
+        DunDunAnimatorController.SetTrigger("Activate");        
+    }
+
+    public void Unforseen()
+    {
+        DunDunAnimatorController.SetTrigger("Deactivate");
     }
 }
