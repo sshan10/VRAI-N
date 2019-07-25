@@ -118,6 +118,7 @@ public class SpeechSandboxStreaming : MonoBehaviour
 
     private readonly string AssistantName = "Neptune";
     private readonly string COMMAND_MUSIC = "Music";
+    private readonly string COMMAND_CALENDAR = "Calendar";
     private readonly string COMMAND_BEAT = "Beat";
     private readonly string COMMAND_DATE = "Date";
     private readonly string COMMAND_TIME = "Time";
@@ -233,6 +234,7 @@ public class SpeechSandboxStreaming : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             //gameManager.PlayClip(emotion1RespondClip);
+            Runnable.Run(ShowSchedule());
         }
     }
 
@@ -475,6 +477,11 @@ public class SpeechSandboxStreaming : MonoBehaviour
             {
                 gameManager.PlayClip(cctvClip);
                 Runnable.Run(ConnectingDoor());
+            }
+            else if (string.Equals(intent, COMMAND_CALENDAR, StringComparison.OrdinalIgnoreCase))
+            {
+                //gameManager.PlayClip(cctvClip);
+                Runnable.Run(ShowSchedule());
             }
             else if (string.Equals(intent, COMMAND_EMOTION1, StringComparison.OrdinalIgnoreCase))
             {
@@ -757,6 +764,14 @@ public class SpeechSandboxStreaming : MonoBehaviour
     {
         const string SEARCHING_URL = "https://www.google.com/search?q=dog";
         browser.InstantiateBrowserWindow(SEARCHING_URL);
+
+        yield return null;
+    }
+
+    private IEnumerator ShowSchedule()
+    {
+        const string Calendar_URL = "https://calendar.google.com/calendar/embed?src=bonokong03%40gmail.com&ctz=Asia%2FSeoul";
+        browser.InstantiateBrowserWindow(Calendar_URL);
 
         yield return null;
     }
