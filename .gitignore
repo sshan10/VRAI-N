@@ -7,7 +7,7 @@ Assets/ArchVizPRO_Interior
 Assets/Polygon
 Assets/AssetStoreTools*
 Assets/ZFBrowser
-
+Assets/IBMSdkCore/
 # Visual Studio cache directory
 .vs/
 

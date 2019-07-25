@@ -7,7 +7,7 @@ namespace ZenFulcrum.EmbeddedBrowser
     public class OdysseyControllerInput : MonoBehaviour
     {
         public bool Tracked { get; private set; }
-
+                
         public MouseButton DepressedButtons { get; private set; }
 
         public Vector2 ScrollDelta { get; private set; }
