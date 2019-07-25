@@ -28,6 +28,8 @@ public class GetVoicePlayWindows : MonoBehaviour
             browserWindow = Instantiate(browserWindowPrefab, virtualHMD.transform.position, GetBrowserQuaternion());
             browserComponent = browserWindow.GetComponentInChildren<Browser>();
             browserComponent.Url = URL;
+
+            browserVisualingAnimator = browserWindow.GetComponent<Animator>();
         }
         else
         {
@@ -38,7 +40,7 @@ public class GetVoicePlayWindows : MonoBehaviour
 
     public void InitializeBrowserWindow()
     {
-        if(browserVisualingAnimator != null)
+        if(browserWindow != null)
         {
             StartCoroutine("WaitAndInitialize");
         }
@@ -46,10 +48,14 @@ public class GetVoicePlayWindows : MonoBehaviour
 
     IEnumerator WaitAndInitialize()
     {
-        browserVisualingAnimator.SetTrigger("Destroy");
-        yield return new WaitForSeconds(1f);
-        Destroy(browserWindow);
-        browserWindow = null;
+        if(browserVisualingAnimator != null)
+        {
+            browserVisualingAnimator.SetTrigger("Destroy");
+            yield return new WaitForSeconds(1f);
+            Destroy(browserWindow);
+            browserWindow = null;
+            browserVisualingAnimator = null;
+        }
     }
 
     private Quaternion GetBrowserQuaternion()

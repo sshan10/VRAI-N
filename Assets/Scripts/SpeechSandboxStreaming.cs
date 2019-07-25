@@ -34,6 +34,10 @@ public class SpeechSandboxStreaming : MonoBehaviour
 {
 
     public GameManager gameManager;
+    public GetVoicePlayWindows browser;
+
+
+
     public AudioClip respondClip;
     public AudioClip introClip;
     public AudioClip playingSongClip;
@@ -728,8 +732,9 @@ public class SpeechSandboxStreaming : MonoBehaviour
 
     private IEnumerator PlayingMusic()
     {
-        const string PLAY_URL = "https://www.youtube.com/watch?v=tIOwZjinOqk";
-        Debug.Log("PlayingMusic: " + PLAY_URL);
+        //const string PLAY_URL = "https://www.youtube.com/watch?v=tIOwZjinOqk";
+        const string PLAY_URL = "https://www.youtube.com/watch?v=RzEr66WYcm8";
+        browser.InstantiateBrowserWindow(PLAY_URL);
 
         yield return null;
     }
@@ -737,22 +742,21 @@ public class SpeechSandboxStreaming : MonoBehaviour
     private IEnumerator WebSearching()
     {
         const string SEARCHING_URL = "https://www.google.com/search?q=dog";
-        Debug.Log("WebSearching: " + SEARCHING_URL);
+        browser.InstantiateBrowserWindow(SEARCHING_URL);
 
         yield return null;
     }
 
     private IEnumerator TurnOff()
-    {        
-        Debug.Log("TurnOff: " + "Turn off the browser!");
-
+    {
+        browser.InitializeBrowserWindow();
         yield return null;
     }
 
     private IEnumerator ConnectingDoor()
     {
-        const string CCTV_URL = "172.16.106.150:4747/video";
-        Debug.Log("ConnectingDoor: " + CCTV_URL);
+        const string CCTV_URL = "http://172.16.106.150:4747/video";
+        browser.InstantiateBrowserWindow(CCTV_URL);
 
         yield return null;
     }
