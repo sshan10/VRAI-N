@@ -58415,7 +58415,10 @@ GameObject:
   - component: {fileID: 1326313943}
   - component: {fileID: 1326313942}
   - component: {fileID: 1326313940}
+<<<<<<< HEAD
   - component: {fileID: 1326313941}
+=======
+>>>>>>> seungsoo
   m_Layer: 0
   m_Name: TeleportablePlane
   m_TagString: Untagged
@@ -58437,6 +58440,7 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+<<<<<<< HEAD
 --- !u!114 &1326313941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58454,6 +58458,8 @@ MonoBehaviour:
   fadeDuration: 0.3
   m_reticleMaterial: {fileID: 0}
   teleportButton: 1
+=======
+>>>>>>> seungsoo
 --- !u!33 &1326313942
 MeshFilter:
   m_ObjectHideFlags: 0
