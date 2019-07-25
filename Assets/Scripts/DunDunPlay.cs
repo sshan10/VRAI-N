@@ -9,7 +9,6 @@ public class DunDunPlay : MonoBehaviour
     public GameObject Instance = null;
     public Transform playerTransform;
 
-<<<<<<< HEAD
     private Animator DunDunAnimatorController;
 
     void Awake()
@@ -51,31 +50,5 @@ public class DunDunPlay : MonoBehaviour
     public void Unforseen()
     {
         DunDunAnimatorController.SetTrigger("Deactivate");
-=======
-    void Awake()
-    {
-        playerTransform = Camera.main.transform;
-    }
-
-    public void Instantiate()
-    {
-        Vector3 spawnPosition = GetSpawnPosition();
-
-        if(Instance == null)
-        {
-            Instance = Instantiate(DunDunPrefab);            
-        }
-
-        Instance.transform.position = spawnPosition;
-        Instance.transform.LookAt(playerTransform);
-    }
-
-    private Vector3 GetSpawnPosition()
-    {
-        Vector3 offset = playerTransform.forward.normalized * 3;
-        Vector3 offsetPosition = playerTransform.position + offset;
-
-        return offsetPosition;
->>>>>>> seungsoo
     }
 }

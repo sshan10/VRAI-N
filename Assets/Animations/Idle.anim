@@ -16,7 +16,6 @@ AnimationClip:
   m_EulerCurves: []
   m_PositionCurves: []
   m_ScaleCurves: []
-<<<<<<< HEAD
   m_FloatCurves:
   - curve:
       serializedVersion: 2
@@ -111,9 +110,6 @@ AnimationClip:
     path: BrowsingSet/ExternalKeyboard
     classID: 1
     script: {fileID: 0}
-=======
-  m_FloatCurves: []
->>>>>>> 917336d8db641dbe3471f10277675bd4508420fd
   m_PPtrCurves: []
   m_SampleRate: 60
   m_WrapMode: 0
@@ -143,7 +139,6 @@ AnimationClip:
     m_KeepOriginalPositionXZ: 0
     m_HeightFromFeet: 0
     m_Mirror: 0
-<<<<<<< HEAD
   m_EditorCurves:
   - curve:
       serializedVersion: 2
@@ -238,9 +233,6 @@ AnimationClip:
     path: BrowsingSet/ExternalKeyboard
     classID: 1
     script: {fileID: 0}
-=======
-  m_EditorCurves: []
->>>>>>> 917336d8db641dbe3471f10277675bd4508420fd
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
