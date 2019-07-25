@@ -13,14 +13,8 @@ MonoBehaviour:
   m_Name: VIUSettings
   m_EditorClassIdentifier: 
   m_autoCheckNewVIUVersion: 1
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
   m_virtualDPadDeadZone: 0.15
   m_individualTouchpadJoystickValue: 0
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
   m_autoLoadBindingConfigOnStart: 1
   m_bindingConfigFilePath: vive_role_bindings.cfg
   m_enableBindingInterfaceSwitch: 1
@@ -28,45 +22,23 @@ MonoBehaviour:
   m_bindingInterfaceSwitchKeyModifier: 303
   m_bindingInterfaceObjectSource: {fileID: 101448, guid: 26a034c83db7bcb4f99de4ddf57cbcfc,
     type: 3}
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
   m_activateGoogleVRModule: 1
   m_daydreamSyncPadPressToTrigger: 1
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
   m_autoLoadExternalCameraConfigOnStart: 1
   m_externalCameraConfigFilePath: externalcamera.cfg
   m_enableExternalCameraSwitch: 1
   m_externalCameraSwitchKey: 109
   m_externalCameraSwitchKeyModifier: 303
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-  m_activateOculusVRModule: 0
+  m_activateOculusVRModule: 1
   m_activateSteamVRModule: 1
   m_activateSimulatorModule: 0
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
   m_simulatorAutoTrackMainCamera: 1
   m_simulateTrackpadTouch: 1
   m_enableSimulatorKeyboardMouseControl: 1
   m_simulatorKeyMoveSpeed: 1.5
   m_simulatorMouseRotateSpeed: 90
   m_simulatorKeyRotateSpeed: 90
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
   m_activateUnityNativeVRModule: 1
-=======
-  m_activateGoogleVRModule: 1
-  m_daydreamSyncPadPressToTrigger: 1
->>>>>>> Stashed changes
-=======
-  m_activateGoogleVRModule: 1
-  m_daydreamSyncPadPressToTrigger: 1
->>>>>>> Stashed changes
   m_activateWaveVRModule: 1
   m_simulateWaveVR6DoFController: 0
   m_waveVRAddVirtualArmTo3DoFController: 1
@@ -75,18 +47,3 @@ MonoBehaviour:
   m_waveVRVirtualArmExtensionOffset: {x: -0.13, y: 0.14, z: 0.08}
   m_waveVRVirtualWristRestPosition: {x: 0, y: 0, z: 0.35}
   m_waveVRVirtualHandRestPosition: {x: 0, y: 0, z: 0.05}
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-=======
->>>>>>> Stashed changes
-  m_activateSimulatorModule: 1
-  m_activateUnityNativeVRModule: 0
-  m_activateSteamVRModule: 0
-  m_activateOculusVRModule: 0
-  m_virtualDPadDeadZone: 0.15
-  m_individualTouchpadJoystickValue: 0
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
