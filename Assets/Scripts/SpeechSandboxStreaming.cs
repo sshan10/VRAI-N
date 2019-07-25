@@ -118,6 +118,7 @@ public class SpeechSandboxStreaming : MonoBehaviour
 
     private readonly string AssistantName = "Neptune";
     private readonly string COMMAND_MUSIC = "Music";
+    private readonly string COMMAND_BEAT = "Beat";
     private readonly string COMMAND_DATE = "Date";
     private readonly string COMMAND_TIME = "Time";
     private readonly string COMMAND_WEB_SEARCH = "Web_search";
@@ -447,6 +448,11 @@ public class SpeechSandboxStreaming : MonoBehaviour
                 gameManager.PlayClip(playingSongClip);
                 Runnable.Run(PlayingMusic());
             }
+            else if (string.Equals(intent, COMMAND_BEAT, StringComparison.OrdinalIgnoreCase))
+            {
+                //gameManager.PlayClip(playingSongClip);
+                Runnable.Run(DropTheBeat());
+            }
             else if (string.Equals(intent, COMMAND_DATE, StringComparison.OrdinalIgnoreCase))
             {
                 Runnable.Run(GetDateAndAlert());
@@ -734,6 +740,14 @@ public class SpeechSandboxStreaming : MonoBehaviour
     {
         //const string PLAY_URL = "https://www.youtube.com/watch?v=tIOwZjinOqk";
         const string PLAY_URL = "https://www.youtube.com/watch?v=RzEr66WYcm8";
+        browser.InstantiateBrowserWindow(PLAY_URL);
+
+        yield return null;
+    }
+
+    private IEnumerator DropTheBeat()
+    {
+        const string PLAY_URL = "https://youtu.be/_CL6n0FJZpk?t=20";
         browser.InstantiateBrowserWindow(PLAY_URL);
 
         yield return null;
