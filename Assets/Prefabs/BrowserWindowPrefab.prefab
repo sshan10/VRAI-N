@@ -361,8 +361,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _url: www.google.com
-  _width: 1280
-  _height: 720
+  _width: 1440
+  _height: 1024
   generateMipmap: 1
   baseColor:
     serializedVersion: 2
