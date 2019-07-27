@@ -105,7 +105,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3894928629673942105
 Transform:
   m_ObjectHideFlags: 0
@@ -283,8 +283,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3894928630223894918}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -18.672102, y: -6.1867404, z: 9.357266}
-  m_LocalScale: {x: 4, y: 6, z: 1}
+  m_LocalPosition: {x: -18.672102, y: -6.1867404, z: 7.357266}
+  m_LocalScale: {x: 1, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 3894928628625288317}
   m_RootOrder: 0
@@ -361,13 +361,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _url: www.google.com
-  _width: 640
-  _height: 480
+  _width: 1440
+  _height: 1024
   generateMipmap: 1
   baseColor:
     serializedVersion: 2
     rgba: 0
-  _zoom: 10
+  _zoom: 1
   allowContextMenuOn: 0
   newWindowAction: 4
 --- !u!114 &3894928630223894917
