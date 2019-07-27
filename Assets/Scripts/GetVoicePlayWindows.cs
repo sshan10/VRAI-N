@@ -10,36 +10,37 @@ public class GetVoicePlayWindows : MonoBehaviour
 
     public GameObject browserWindowPrefab;
 
-    public string URL;
-
     private GameObject browserWindow;
     private Browser browserComponent;
     private Animator browserVisualingAnimator;
-
-    Vector3 browserRotation;
-
+    
     public void Start()
     {
-        float yRotation = virtualHMD.transform.eulerAngles.y;
-        browserRotation = new Vector3(0, yRotation, 0);
         browserWindow = null;
         browserComponent = null;
         browserVisualingAnimator = null;
     }
 
-    public void InstantiateBrowserWindow()
+    public void InstantiateBrowserWindow(string URL = "http://www.google.com/")
     {
-        if(browserWindow != null)
+        if(browserWindow == null)
         {
-            browserWindow = Instantiate(browserWindowPrefab, virtualHMD.transform.position, Quaternion.Euler(browserRotation));
+            browserWindow = Instantiate(browserWindowPrefab, virtualHMD.transform.position, GetBrowserQuaternion());
             browserComponent = browserWindow.GetComponentInChildren<Browser>();
             browserComponent.Url = URL;
+
+            browserVisualingAnimator = browserWindow.GetComponent<Animator>();
+        }
+        else
+        {
+            browserWindow.transform.position = virtualHMD.transform.position;
+            browserComponent.LoadURL(URL, force: true);
         }
     }
 
     public void InitializeBrowserWindow()
     {
-        if(browserVisualingAnimator != null)
+        if(browserWindow != null)
         {
             StartCoroutine("WaitAndInitialize");
         }
@@ -47,11 +48,22 @@ public class GetVoicePlayWindows : MonoBehaviour
 
     IEnumerator WaitAndInitialize()
     {
-        browserVisualingAnimator.SetTrigger("Destroy");
-        yield return new WaitForSeconds(1f);
-        Destroy(browserWindow);
-        browserWindow = null;
-        URL = null;
+        if(browserVisualingAnimator != null)
+        {
+            browserVisualingAnimator.SetTrigger("Destroy");
+            yield return new WaitForSeconds(1f);
+            Destroy(browserWindow);
+            browserWindow = null;
+            browserVisualingAnimator = null;
+        }
+    }
+
+    private Quaternion GetBrowserQuaternion()
+    {
+        float yRotation = virtualHMD.transform.eulerAngles.y;
+        Vector3 browserRotation = new Vector3(0, yRotation, 0);
+
+        return Quaternion.Euler(browserRotation);
     }
 
     void Update()
