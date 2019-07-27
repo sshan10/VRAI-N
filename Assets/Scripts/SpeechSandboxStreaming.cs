@@ -35,7 +35,7 @@ public class SpeechSandboxStreaming : MonoBehaviour
 
     public GameManager gameManager;
     public GetVoicePlayWindows browser;
-
+    public DunDunPlay dundunSpawner;
 
 
     public AudioClip respondClip;
@@ -425,22 +425,27 @@ public class SpeechSandboxStreaming : MonoBehaviour
 
             if (intent == AssistantName)
             {
+                /*
                 if (isWakeUp == false)
                 {
                     isWakeUp = true;
+                    */
                     gameManager.PlayClip(respondClip);
-
+                    dundunSpawner.Instantiate();
+                /*
                     return;
                     //ReserveToSleep();
                 }
+                */
             }
 
+            /*
             // 엔진이 깨어있을 때만 명령어 받기
             if (!isWakeUp)
             {
                 return;
             }
-
+            */
 
 
             // 커맨드 처리
@@ -501,6 +506,7 @@ public class SpeechSandboxStreaming : MonoBehaviour
                 gameManager.PlayClip(apologizeClip);
             }
 
+            isWakeUp = false;
 
             /*
             if (intent == "move")
@@ -784,7 +790,7 @@ public class SpeechSandboxStreaming : MonoBehaviour
 
     private IEnumerator ConnectingDoor()
     {
-        const string CCTV_URL = "http://172.16.106.150:4747/video";
+        const string CCTV_URL = "http://192.168.43.76:4747/video";
         browser.InstantiateBrowserWindow(CCTV_URL);
 
         yield return null;
