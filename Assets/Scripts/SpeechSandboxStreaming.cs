@@ -35,12 +35,7 @@ public class SpeechSandboxStreaming : MonoBehaviour
 
     public GameManager gameManager;
     public GetVoicePlayWindows browser;
-<<<<<<< HEAD
     public DunDunPlay dundunSpawner;
-=======
-    public DunDunPlay dunDunSpawner;
-
->>>>>>> a523af1bc98c8f00ce73d4ee40032d74864bb97f
 
 
     public AudioClip respondClip;
@@ -436,13 +431,10 @@ public class SpeechSandboxStreaming : MonoBehaviour
                     isWakeUp = true;
                     */
                     gameManager.PlayClip(respondClip);
-<<<<<<< HEAD
                     dundunSpawner.Instantiate();
                 /*
-=======
                     dunDunSpawner.Instantiate();
 
->>>>>>> a523af1bc98c8f00ce73d4ee40032d74864bb97f
                     return;
                     //ReserveToSleep();
                 }
