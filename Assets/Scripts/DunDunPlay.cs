@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class DunDunPlay : MonoBehaviour
 {
-    public GameObject player;
     public GameObject DunDunPrefab;
     public GameObject Instance = null;
     public Transform playerTransform;
